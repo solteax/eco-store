@@ -1,0 +1,10 @@
+export const SET_CATEGORY = 'SET_CATEGORY';
+export const SET_DATA = 'SET_DATA';
+export const SET_LOADED = 'SET_LOADED';
+export const SET_SORT_BY = 'SET_SORT_BY';
+export const ADD_TO_CART = 'ADD_TO_CART';
+export const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
+export const INCREMENT_AMOUNT = 'INCREMENT_AMOUNT';
+export const DECREMENT_AMOUNT = 'DECREMENT_AMOUNT';
+export const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
+export const SET_TOTAL_PRODUCTS = 'SET_TOTAL_PRODUCTS';

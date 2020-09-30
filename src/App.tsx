@@ -1,26 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Header } from './components/Header';
 
-function App() {
+import { Route, Switch } from 'react-router-dom';
+import { Home, Products } from './pages';
+
+/*
+  category:
+  0 - all
+  1 - Vegetables
+  2 - Meet & fish
+  3 - Bakery
+*/
+
+export const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/products" component={Products} />
+      </Switch>
+    </>
   );
-}
-
-export default App;
+};

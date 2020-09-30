@@ -1,0 +1,16 @@
+.benefit-hover {
+  top: -2.5rem;
+  display: none;
+}
+
+.benefit:hover .benefit-hover {
+  display: flex;
+}
+
+.benefit-hover:before {
+  content: '';
+  border: 7px solid transparent;
+  border-top: 7px solid black;
+  position: absolute;
+  bottom: -14px;
+}

@@ -1,0 +1,70 @@
+html {
+  font-family: 'Podkova', serif;
+  overflow: scroll;
+  overflow-x: hidden;
+  scroll-snap-type: proximity;
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-snap-coordinate: 50% 50%;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #d4d4d4;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2) inset;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #939393;
+  border-radius: 8px;
+  border: 3px solid #d4d4d4;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7c7c7c;
+}
+
+.link-hover-center {
+  display: inline-block;
+  color: #07aa19;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+}
+.link-hover-center:after {
+  display: block;
+  content: '';
+  background-color: #07aa19;
+  height: 3px;
+  width: 0%;
+  left: 50%;
+  position: absolute;
+  -webkit-transition: width 0.3s ease-in-out;
+  -moz--transition: width 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+.link-hover-center:hover:after,
+.link-hover-center:focus:after {
+  width: 100%;
+}
+
+.product-list .slick-list {
+  padding-bottom: 70px !important;
+}
+
+.product-list.slick-slider span {
+  height: 83% !important;
+}
+
+.main-container {
+  min-height: 300px;
+}
