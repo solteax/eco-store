@@ -1,25 +1,39 @@
 import React from 'react';
+const sortTypes = [
+  { name: 'популярности', type: 'rating', order: 'desc' },
+  { name: 'цене ↑', type: 'price', order: 'asc' },
+  { name: 'цене ↓', type: 'price', order: 'desc' },
+  { name: 'алфавиту ↓', type: 'name', order: 'asc' },
+  { name: 'алфавиту ↑', type: 'name', order: 'desc' },
+];
 
-export const SortBy = ({ sortTypes, activeSortType, activeOrderType, onClickSortType }: any) => {
+export const SortBy = (props: {
+  activeSortType: string;
+  activeOrderType: string;
+  onClickSortType: (type: string, order: string) => void;
+}) => {
+  const { activeSortType, activeOrderType, onClickSortType } = props;
   const [visiblePopup, setVisiblePopup] = React.useState(false);
-  const sortRef: any = React.useRef();
+  const sortRef = React.useRef(null);
 
-  const activeLabel = sortTypes.find(
-    (obj: any) => obj.type === activeSortType && obj.order === activeOrderType,
-  ).name;
+  const labelObj = sortTypes.find(
+    (obj) => obj.type === activeSortType && obj.order === activeOrderType,
+  );
+  const activeLabel: string = labelObj ? labelObj.name : sortTypes[0].name;
 
   const toggleVisiblePopup = () => {
     setVisiblePopup(!visiblePopup);
   };
 
   const handleOutsideClick = (event: any) => {
+    //MouseEvent
     const path = event.path || (event.composedPath && event.composedPath());
     if (!path.includes(sortRef.current)) {
       setVisiblePopup(false);
     }
   };
 
-  const onSelectItem = (type: any, order: any) => {
+  const onSelectItem = (type: string, order: string) => {
     if (onClickSortType) {
       onClickSortType(type, order);
     }
@@ -44,7 +58,7 @@ export const SortBy = ({ sortTypes, activeSortType, activeOrderType, onClickSort
         <div className="sort__popup absolute shadow-md bg-gray-200 z-50 right-0 mt-12 rounded">
           <ul className="flex flex-col">
             {sortTypes &&
-              sortTypes.map((obj: any, index: number) => {
+              sortTypes.map((obj, index: number) => {
                 let activeSortByClass =
                   activeSortType === obj.type && activeOrderType === obj.order
                     ? 'text-custom-green bg-green-100'

@@ -19,13 +19,13 @@ const photos = [
   },
 ];
 
-function Arrow(props: any) {
-  let className = props.type === 'next' ? 'right-0' : 'left-0';
+function Arrow({ type, onClick }: { type: string; onClick?: () => void }) {
+  let className = type === 'next' ? 'right-0' : 'left-0';
   className +=
     ' absolute z-50 top-0 h-full flex justify-center items-center px-2 hover:bg-green-500 hover:bg-opacity-25 cursor-pointer transition duration-300 ease-in-out text-green-700 hover:text-opacity-100 text-opacity-25 font-bold text-6xl';
-  const char = props.type === 'next' ? '>' : '<';
+  const char = type === 'next' ? '>' : '<';
   return (
-    <span className={className} onClick={props.onClick}>
+    <span className={className} onClick={onClick}>
       {char}
     </span>
   );

@@ -5,12 +5,20 @@ const categoryClasses =
 const activeCategoryClasses =
   'py-2 px-4 cursor-pointer mr-4 text-base font-bold bg-black rounded-full text-white';
 
-export const SortCategory = ({ categories, activeCategory, categoryHandler }: any) => {
+export const SortCategory = ({
+  categories,
+  activeCategory,
+  categoryHandler,
+}: {
+  categories: string[];
+  activeCategory: number;
+  categoryHandler: (index: number) => void;
+}) => {
   // console.log('Rerender Sort-SortCategory');
   return (
     <div className="categories">
       <ul className="flex">
-        {categories.map((category: any, index: number) => (
+        {categories.map((category: string, index: number) => (
           <li
             key={category + index}
             className={activeCategory === index ? activeCategoryClasses : categoryClasses}

@@ -1,14 +1,23 @@
 import React from 'react';
 
 import { useSelector } from 'react-redux';
+import { productItem, store } from '../../interfaces';
 
-const ExtraInner = ({ buyHandler, item, activeClass }: any) => {
-  const amount = useSelector(({ cart }: any) =>
-    cart.items[item.id] ? cart.items[item.id].amount : null,
-  );
+const ExtraInner = ({
+  buyHandler,
+  item,
+  activeClass,
+}: {
+  buyHandler: (item: productItem, amount: number) => void;
+  item: productItem;
+  activeClass: boolean;
+}) => {
+  const amount = useSelector((
+    { cart }: any, // store - ?
+  ) => (cart.items[item.id] ? cart.items[item.id].amount : null));
 
-  const [totalAmount, setTotalAmount]: any = React.useState(amount ? amount : 1);
-  const [isAdded, setIsAdded]: any = React.useState(false);
+  const [totalAmount, setTotalAmount] = React.useState(amount ? amount : 1);
+  const [isAdded, setIsAdded] = React.useState(false);
   // console.log('Rerender Items-Extra');
   return (
     <div

@@ -1,13 +1,16 @@
 import React from 'react';
+import { productItem } from '../../interfaces';
 import { Extra } from './Extra';
 
-interface ProductDataType {
-  extraShow: boolean;
-  item: any;
-  buyHandler(): any;
-}
-
-const ItemInner = ({ extraHide, item, buyHandler }: any) => {
+const ItemInner = ({
+  extraHide,
+  item,
+  buyHandler,
+}: {
+  extraHide: boolean;
+  item: productItem;
+  buyHandler: (item: productItem, amount: number) => void;
+}) => {
   const { name, imageUrl, price } = item;
 
   const [isExtra, setIsExtra] = React.useState(false);

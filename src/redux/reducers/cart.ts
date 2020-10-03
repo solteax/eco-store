@@ -5,22 +5,16 @@ import {
   REMOVE_FROM_CART,
 } from '../actions/types';
 
-const initialState: any = {
+const initialState = {
   items: {},
 };
 
-interface CartInterface {
-  items: {
-    [key: number]: {
-      imageUrl: string;
-      name: string;
-      price: number;
-      amount: number;
-    };
-  };
+interface ActionInterface {
+  type: string;
+  payload: any;
 }
 
-export const cart = (state = initialState, action: any) => {
+export const cart = (state: any = initialState, action: ActionInterface) => {
   switch (action.type) {
     case ADD_TO_CART:
       // if (addCartObj.items[action.payload.id]) addCartObj.items[action.payload.id]++;

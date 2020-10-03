@@ -14,14 +14,14 @@ export const setTotalProducts = (data: number) => ({
   payload: data,
 });
 
-export const setCurrentPage = (data: any) => ({
+export const setCurrentPage = (data: number) => ({
   type: SET_CURRENT_PAGE,
   payload: data,
 });
 
 export const fetchProducts = (
   category: number,
-  sortBy: any,
+  sortBy: { type: string; order: string },
   currentPage: number = 1,
   itemsPerPage: number,
 ) => (dispatch: any) => {
@@ -31,20 +31,20 @@ export const fetchProducts = (
   });
 
   fetch(
-    `/products?${category ? `category=${category}` : ''}&_sort=${sortBy.type}&_order=${
-      sortBy.order
-    }&_page=${currentPage}&_limit=${itemsPerPage}`,
+    `http://localhost:3001/products?${category ? `category=${category}` : ''}&_sort=${
+      sortBy.type
+    }&_order=${sortBy.order}&_page=${currentPage}&_limit=${itemsPerPage}`,
   )
     .then((res) => res.json())
-    .then((products: any) => {
+    .then((products) => {
       dispatch(setData(products));
     });
 };
 
 export const fetchTotalProductsAmount = () => (dispatch: any) => {
-  fetch('/products')
+  fetch('http://localhost:3001/products')
     .then((res) => res.json())
-    .then((amount: any) => {
+    .then((amount) => {
       dispatch(setTotalProducts(amount.length));
     });
 };

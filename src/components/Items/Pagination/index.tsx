@@ -2,7 +2,17 @@ import React from 'react';
 
 const paginationStyles = 'cursor-pointer hover:underline px-2 hover:text-custom-green';
 
-export const Pagination = ({ currentPage, totalPosts, itemsPerPage, handleSetPage }: any) => {
+export const Pagination = ({
+  currentPage,
+  totalPosts,
+  itemsPerPage,
+  handleSetPage,
+}: {
+  currentPage: number;
+  totalPosts: number;
+  itemsPerPage: number;
+  handleSetPage: (page: number) => void;
+}) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalPosts / itemsPerPage); i++) {

@@ -8,10 +8,10 @@ const initialState = {
   },
 };
 
-type ActionType = {
+interface ActionType {
   type: string;
   payload: number | { type: string; order: string };
-};
+}
 
 export const filter = (state = initialState, action: ActionType) => {
   if (action.type === SET_CATEGORY) {

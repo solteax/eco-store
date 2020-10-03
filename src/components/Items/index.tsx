@@ -10,6 +10,8 @@ import {
   setCurrentPage,
 } from '../../redux/actions/products';
 
+import { store, productItem } from '../../interfaces';
+
 import SlickSlider from 'react-slick';
 
 import './style.css';
@@ -18,13 +20,13 @@ import { Loader } from '../Loader';
 import { addToCart } from '../../redux/actions/cart';
 import { Pagination } from './Pagination';
 
-function Arrow(props: any) {
-  let className = props.type === 'next' ? 'right-0' : 'left-0';
+function Arrow({ type, onClick }: { type: string; onClick?: () => void }) {
+  let className = type === 'next' ? 'right-0' : 'left-0';
   className +=
     ' absolute z-50 top-0 h-83 flex justify-center items-center px-2 cursor-pointer transition duration-300 ease-in-out text-green-700 hover:text-opacity-100 text-opacity-25 font-bold text-6xl';
-  const char = props.type === 'next' ? '>' : '<';
+  const char = type === 'next' ? '>' : '<';
   return (
-    <span className={className} onClick={props.onClick}>
+    <span className={className} onClick={onClick}>
       {char}
     </span>
   );
@@ -53,14 +55,14 @@ const settings = {
 
 const ItemsInner = () => {
   const { items, isDataLoaded, currentPage, itemsPerPage, totalProducts } = useSelector(
-    ({ products }: any) => products,
+    ({ products }: store) => products,
   );
-  const { category, sortBy } = useSelector(({ filter }: any) => filter);
+  const { category, sortBy } = useSelector(({ filter }: store) => filter);
 
   const dispatch = useDispatch();
 
   const onBuy = React.useCallback(
-    (item: any, amount: number) => {
+    (item: productItem, amount: number) => {
       dispatch(
         addToCart({
           [item.id]: {
@@ -97,7 +99,7 @@ const ItemsInner = () => {
         </div>
         <SlickSlider {...settings} className="flex flex-wrap product-list">
           {isDataLoaded ? (
-            items.map((item: any, index: number) => (
+            (items as productItem[]).map((item: productItem, index: number) => (
               <Item
                 key={item.price + index + item.imageUrl}
                 extraHide={true}
@@ -115,7 +117,7 @@ const ItemsInner = () => {
           {isDataLoaded ? (
             <>
               <ul className="flex border border-gray-400 flex-wrap">
-                {items.map((item: any) => (
+                {(items as productItem[]).map((item: productItem) => (
                   <li key={item.id + item.imageUrl} className="lg:w-1/4 md:w-1/2 bg-white">
                     <Item extraHide={false} item={item} buyHandler={onBuy} />
                   </li>

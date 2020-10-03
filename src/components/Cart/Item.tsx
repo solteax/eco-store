@@ -3,7 +3,23 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { decrementAmount, incrementAmount, removeFromCart } from '../../redux/actions/cart';
 
-export const Item = ({ name, price, imageUrl, amount, id, forceUpdate, updateParam }: any) => {
+export const Item = ({
+  name,
+  price,
+  imageUrl,
+  amount,
+  id,
+  forceUpdate,
+  updateParam,
+}: {
+  name: string;
+  price: number;
+  imageUrl: string;
+  amount: number;
+  id: number;
+  forceUpdate(param: boolean): void;
+  updateParam: boolean;
+}) => {
   const dispatch = useDispatch();
 
   const incrementHandler = () => {

@@ -28,10 +28,11 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "server": "node server.js",
     "stats": "react-scripts build \"--stats\" && webpack-bundle-analyzer build/bundle-stats.json",
     "tailwind-build": "tailwind build src/assets/tailwind.css -o public/style.css"
   },

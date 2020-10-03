@@ -2,16 +2,19 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Item } from './Item';
 
+import { store } from '../../interfaces';
+
 import './style.css';
 
 export const Cart: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [updateParam, forceUpdate] = React.useState(false);
-  const sortRef: any = React.useRef();
+  const sortRef = React.useRef<HTMLDivElement>(null);
 
-  const items = useSelector(({ cart }: any) => cart.items);
+  const items = useSelector(({ cart }: store) => cart.items); //:{ cart: { items: Array<cartItems> } }
 
   const handleOutsideClick = (event: any) => {
+    // MouseEvent
     const path = event.path || (event.composedPath && event.composedPath());
     if (!path.includes(sortRef.current)) {
       setIsOpen(false);
@@ -40,7 +43,7 @@ export const Cart: React.FC = () => {
         {Object.keys(items).length ? (
           <div className="absolute top-0 right-5 h-0 w-0 px-2 py-2 text-xs font-bold rounded-full bg-green-500 text-white flex items-center justify-center">
             {Object.values(items).reduce(
-              (accumulator: number, item: any) => accumulator + item.amount,
+              (accumulator: number, item) => accumulator + item.amount,
               0,
             )}
           </div>
@@ -71,15 +74,18 @@ export const Cart: React.FC = () => {
               ''
             )}
             {Object.keys(items).length ? (
-              Object.entries(items).map((item: any, index: number) => (
-                <Item
-                  key={item[1].name + item[1].price + index}
-                  forceUpdate={forceUpdate}
-                  updateParam={updateParam}
-                  id={item[0]}
-                  {...item[1]}
-                />
-              ))
+              Object.entries(items).map((item, index: number) => {
+                console.log('item:', item);
+                return (
+                  <Item
+                    key={item[1].name + item[1].price + index}
+                    forceUpdate={forceUpdate}
+                    updateParam={updateParam}
+                    id={+item[0]}
+                    {...item[1]}
+                  />
+                );
+              })
             ) : (
               <div className="flex justify-center">Корзина пустая</div>
             )}
@@ -96,7 +102,7 @@ export const Cart: React.FC = () => {
                     Итого{' '}
                     <b className="ml-1">
                       {Object.values(items).reduce(
-                        (accumulator: number, item: any) => accumulator + item.price * item.amount,
+                        (accumulator: number, item) => accumulator + item.price * item.amount,
                         0,
                       )}
                       грн
