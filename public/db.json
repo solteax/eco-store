@@ -6,7 +6,7 @@
       "name": "Перец",
       "price": 803,
       "category": 1,
-      "rating": 4
+      "rating": 100
     },
     {
       "id": 1,
@@ -14,7 +14,7 @@
       "name": "Капуста",
       "price": 245,
       "category": 1,
-      "rating": 6
+      "rating": 200
     },
     {
       "id": 2,
@@ -22,7 +22,7 @@
       "name": "Гречневый хлеб",
       "price": 295,
       "category": 3,
-      "rating": 4
+      "rating": 300
     },
     {
       "id": 3,
@@ -30,7 +30,7 @@
       "name": "Мясо",
       "price": 275,
       "category": 2,
-      "rating": 2
+      "rating": 400
     },
     {
       "id": 4,
@@ -38,7 +38,7 @@
       "name": "Авокадо",
       "price": 415,
       "category": 1,
-      "rating": 8
+      "rating": 500
     },
     {
       "id": 5,
@@ -46,7 +46,7 @@
       "name": "Печенье",
       "price": 580,
       "category": 3,
-      "rating": 2
+      "rating": 600
     },
     {
       "id": 6,
@@ -54,7 +54,7 @@
       "name": "Лосось",
       "price": 675,
       "category": 2,
-      "rating": 9
+      "rating": 700
     },
     {
       "id": 7,
@@ -62,7 +62,7 @@
       "name": "Скумбрия",
       "price": 800,
       "category": 2,
-      "rating": 10
+      "rating": 800
     },
     {
       "id": 8,
