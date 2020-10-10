@@ -24,13 +24,11 @@ export const Cart: React.FC = () => {
   React.useEffect(() => {
     document.body.addEventListener('click', handleOutsideClick);
   }, []);
-  // console.log('Rerender Cart');
   return (
     <>
       <div
         onClick={() => {
           if (Object.keys(items).length) setIsOpen(true);
-          // setIsOpen(true);
         }}
         className="fill-current text-green-500 text-base w-6 h-6 cursor-pointer relative">
         <svg className="block" viewBox="0 0 24 22">

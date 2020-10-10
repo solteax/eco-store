@@ -5,7 +5,6 @@ import { Cart } from '../Cart';
 import logo from '../../assets/logo.jpg';
 
 export const Header: React.FC = () => {
-  // console.log('Rerender Header');
   return (
     <header className="container flex justify-between items-center py-2">
       <Link to="/">

@@ -1,7 +1,6 @@
 import React from 'react';
 
 export const Promotion = () => {
-  // console.log('Rerender Promotion');
   return (
     <div className="container flex flex-wrap">
       <img

@@ -14,7 +14,7 @@ const ItemInner = ({
   const { name, imageUrl, price } = item;
 
   const [isExtra, setIsExtra] = React.useState(false);
-  // console.log('Rerender Items-Item');
+
   return (
     <div
       className="relative bg-white border p-4 cursor-pointer h-full hover:border-custom-green hover:border-4  hover:border-b-0"

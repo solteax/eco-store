@@ -43,7 +43,7 @@ export const SortBy = (props: {
   React.useEffect(() => {
     document.body.addEventListener('click', handleOutsideClick);
   }, []);
-  // console.log('Rerender Sort-SortBy');
+
   return (
     <div ref={sortRef} className="sort flex relative">
       <div className="sort__label flex items-center">

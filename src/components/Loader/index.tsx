@@ -2,7 +2,6 @@ import React from 'react';
 import './style.css';
 
 export const Loader = () => {
-  // console.log('Rerender Loader');
   return (
     <div className="wrapper">
       <span className="circle circle-1"></span>

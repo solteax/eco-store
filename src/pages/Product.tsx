@@ -1,6 +1,5 @@
 import React from 'react';
-
+// soon
 export const Product = () => {
-  // console.log('Rerender Product');
   return <div>About Product page</div>;
 };

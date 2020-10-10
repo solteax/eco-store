@@ -45,7 +45,6 @@ const settings = {
 };
 
 export const Slider = () => {
-  // console.log('Rerender Slider');
   return (
     <SlickSlider {...settings} className="mb-12">
       {photos.map((photo, index) => (

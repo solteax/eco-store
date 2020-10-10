@@ -13,12 +13,11 @@ const ExtraInner = ({
   activeClass: boolean;
 }) => {
   const amount = useSelector((
-    { cart }: any, // store - ?
+    { cart }: any, // store
   ) => (cart.items[item.id] ? cart.items[item.id].amount : null));
 
   const [totalAmount, setTotalAmount] = React.useState(amount ? amount : 1);
   const [isAdded, setIsAdded] = React.useState(false);
-  // console.log('Rerender Items-Extra');
   return (
     <div
       className={`${

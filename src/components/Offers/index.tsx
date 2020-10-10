@@ -4,7 +4,6 @@ const offers = [
   'https://design110.horoshop.ua/content/images/18/31009338637419.jpg',
   'https://design110.horoshop.ua/content/images/43/87316607978284.jpg',
 ];
-// console.log('Rerender Offers');
 export const Offers = () => {
   return (
     <div className="container flex flex-wrap">

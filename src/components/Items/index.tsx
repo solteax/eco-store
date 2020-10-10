@@ -1,24 +1,23 @@
 import React from 'react';
 import { Link, Route } from 'react-router-dom';
 
-import { Item } from './Item';
-
 import { useDispatch, useSelector } from 'react-redux';
 import {
   fetchProducts,
   fetchTotalProductsAmount,
   setCurrentPage,
 } from '../../redux/actions/products';
+import { addToCart } from '../../redux/actions/cart';
 
 import { store, productItem } from '../../interfaces';
 
-import SlickSlider from 'react-slick';
+import { Item } from './Item';
+import { Loader } from '../Loader';
+import { Pagination } from './Pagination';
 
 import './style.css';
+import SlickSlider from 'react-slick';
 import ScrollToTop from '../../ScrollToTop';
-import { Loader } from '../Loader';
-import { addToCart } from '../../redux/actions/cart';
-import { Pagination } from './Pagination';
 
 function Arrow({ type, onClick }: { type: string; onClick?: () => void }) {
   let className = type === 'next' ? 'right-0' : 'left-0';
@@ -86,9 +85,9 @@ const ItemsInner = () => {
 
   React.useEffect(() => {
     dispatch(fetchProducts(category, sortBy, currentPage, itemsPerPage));
-    dispatch(fetchTotalProductsAmount());
+    dispatch(fetchTotalProductsAmount(category, sortBy));
   }, [category, sortBy, currentPage]);
-  // console.log('Rerender Items');
+  console.log('Rerender Items');
   return (
     <div className="container mt-10 bg-gray-100 py-8">
       <Route exact path="/">

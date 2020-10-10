@@ -31,9 +31,9 @@ export const fetchProducts = (
   });
 
   fetch(
-    `/products?${category ? `category=${category}` : ''}&_sort=${sortBy.type}&_order=${
-      sortBy.order
-    }&_page=${currentPage}&_limit=${itemsPerPage}`,
+    `http://localhost:3001/products?${category ? `category=${category}` : ''}&_sort=${
+      sortBy.type
+    }&_order=${sortBy.order}&_page=${currentPage}&_limit=${itemsPerPage}`,
   )
     .then((res) => res.json())
     .then((products) => {
@@ -41,8 +41,15 @@ export const fetchProducts = (
     });
 };
 
-export const fetchTotalProductsAmount = () => (dispatch: any) => {
-  fetch('/products')
+export const fetchTotalProductsAmount = (
+  category: number,
+  sortBy: { type: string; order: string },
+) => (dispatch: any) => {
+  fetch(
+    `http://localhost:3001/products?${category ? `category=${category}` : ''}&_sort=${
+      sortBy.type
+    }&_order=${sortBy.order}`,
+  )
     .then((res) => res.json())
     .then((amount) => {
       dispatch(setTotalProducts(amount.length));

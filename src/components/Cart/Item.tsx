@@ -34,7 +34,6 @@ export const Item = ({
     dispatch(removeFromCart(id));
     forceUpdate(!updateParam);
   };
-  // console.log('Rerender Cart-Item');
 
   React.useEffect(() => {}, [dispatch]);
 

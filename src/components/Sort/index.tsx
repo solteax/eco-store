@@ -19,7 +19,7 @@ export const Sort = () => {
   const onSelectSortType = (type: string, order: string) => {
     dispatch(setSortBy({ type, order }));
   };
-  // console.log('Rerender Sort');
+
   return (
     <div className="container flex items-center justify-between mt-12">
       <SortCategory

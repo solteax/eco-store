@@ -14,7 +14,6 @@ export const SortCategory = ({
   activeCategory: number;
   categoryHandler: (index: number) => void;
 }) => {
-  // console.log('Rerender Sort-SortCategory');
   return (
     <div className="categories">
       <ul className="flex">

@@ -7,7 +7,6 @@ import { Promotion } from '../components/Promotion';
 import { Benefits } from '../components/Benefits';
 
 export const Home = () => {
-  // console.log('Rerender Home');
   return (
     <>
       <Slider />

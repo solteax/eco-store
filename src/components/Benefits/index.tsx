@@ -31,7 +31,6 @@ const benefits = [
 ];
 
 export const Benefits = () => {
-  // console.log('Rerender Benefits');
   return (
     <div className="container flex items-center justify-around p-4 mt-10">
       {benefits.map((benefit, index: number) => (

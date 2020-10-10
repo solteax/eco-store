@@ -17,9 +17,6 @@ interface ActionInterface {
 export const cart = (state: any = initialState, action: ActionInterface) => {
   switch (action.type) {
     case ADD_TO_CART:
-      // if (addCartObj.items[action.payload.id]) addCartObj.items[action.payload.id]++;
-      // else addCartObj.items[action.payload.id] = 1;
-
       return {
         // ...state,
         items: {
