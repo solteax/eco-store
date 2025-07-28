@@ -1,16 +1,33 @@
-import { createStore, compose, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
+import { createStore, compose, applyMiddleware, Middleware } from "redux"
+import thunk from "redux-thunk"
 
-import rootReducer from './reducers';
+import rootReducer, { RootState } from "./reducers"
 
 declare global {
   interface Window {
-    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
+    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose
   }
 }
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const cartPersistence: Middleware<{}, RootState> = (store) => (next) => (action) => {
+  const result = next(action)
 
-const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
+  const { cart } = store.getState()
 
-export default store;
+  try {
+    localStorage.setItem("cartItems", JSON.stringify(cart.items))
+  } catch (e) {
+    console.warn("Error saving cart to localStorage:", e)
+  }
+
+  return result
+}
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
+const store = createStore(
+  rootReducer,
+  composeEnhancers(applyMiddleware(thunk, cartPersistence))
+)
+
+export default store

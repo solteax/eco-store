@@ -6,7 +6,7 @@ import { SortBy } from './SortBy';
 
 import { SortCategory } from './SortCategory';
 
-const categories = ['Все', 'Овощи', 'Мясо/рыба', 'Выпечка'];
+const categories = ['All', 'Vegetables', 'Meat/Fish', 'Bakery'];
 
 export const Sort = () => {
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ export const Sort = () => {
   };
 
   return (
-    <div className="container flex items-center justify-between mt-12">
+    <div className="container flex justify-between mt-12 flex-col items-start md:items-center md:flex-row">
       <SortCategory
         categories={categories}
         activeCategory={category}

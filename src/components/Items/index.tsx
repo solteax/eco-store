@@ -17,7 +17,7 @@ import { Pagination } from './Pagination';
 
 import './style.css';
 import SlickSlider from 'react-slick';
-import ScrollToTop from '../../ScrollToTop';
+import ScrollToTop from '../../helpers/scrollToTop';
 
 function Arrow({ type, onClick }: { type: string; onClick?: () => void }) {
   let className = type === 'next' ? 'right-0' : 'left-0';
@@ -44,9 +44,21 @@ const settings = {
   prevArrow: <Arrow type="prev" />,
   responsive: [
     {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+      },
+    },
+    {
       breakpoint: 768,
       settings: {
         slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
       },
     },
   ],
@@ -87,13 +99,13 @@ const ItemsInner = () => {
     dispatch(fetchProducts(category, sortBy, currentPage, itemsPerPage));
     dispatch(fetchTotalProductsAmount(category, sortBy));
   }, [category, sortBy, currentPage]);
-  console.log('Rerender Items');
+
   return (
-    <div className="container mt-10 bg-gray-100 py-8">
+    <div className="container mt-4 bg-gray-100 py-8">
       <Route exact path="/">
         <div className="text-center w-full block mb-8 text-custom-green font-bold text-lg">
           <Link className="link-hover-center" to="/products">
-            Посмотреть все товары
+            All Products
           </Link>
         </div>
         <SlickSlider {...settings} className="flex flex-wrap product-list">
@@ -113,23 +125,28 @@ const ItemsInner = () => {
       </Route>
       <ScrollToTop>
         <Route path="/products">
-          {isDataLoaded ? (
-            <>
-              <ul className="flex border border-gray-400 flex-wrap">
-                {(items as productItem[]).map((item: productItem) => (
-                  <li key={item.id + item.imageUrl} className="lg:w-1/4 md:w-1/2 bg-white">
-                    <Item extraHide={false} item={item} buyHandler={onBuy} />
-                  </li>
-                ))}
-              </ul>
-              <Pagination
-                currentPage={currentPage}
-                totalPosts={totalProducts}
-                itemsPerPage={itemsPerPage}
-                handleSetPage={onSetPage}
-              />
-            </>
-          ) : (
+          {isDataLoaded ? 
+            items?.length === 0 ? (
+              <div className="flex items-center justify-center main-container">
+                <h2>There are no products</h2>
+              </div>
+            ):
+              <>
+                <ul className="flex border border-gray-400 flex-wrap">
+                  {(items as productItem[]).map((item: productItem) => (
+                    <li key={item.id + item.imageUrl} className="lg:w-1/4 md:w-1/2 bg-white">
+                      <Item extraHide={false} item={item} buyHandler={onBuy} />
+                    </li>
+                  ))}
+                </ul>
+                <Pagination
+                  currentPage={currentPage}
+                  totalPosts={totalProducts}
+                  itemsPerPage={itemsPerPage}
+                  handleSetPage={onSetPage}
+                />
+              </>
+          : (
             <div className="flex items-center justify-center main-container">
               <Loader />
             </div>

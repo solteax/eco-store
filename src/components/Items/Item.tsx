@@ -18,21 +18,20 @@ const ItemInner = ({
   return (
     <div
       className="relative bg-white border p-4 cursor-pointer h-full hover:border-custom-green hover:border-4  hover:border-b-0"
-      onMouseEnter={setIsExtra.bind(null, true)}
-      onMouseLeave={setIsExtra.bind(null, false)}>
+      onMouseEnter={()=>setIsExtra(true)}
+      onMouseLeave={()=>setIsExtra(false)}
+      onClick={()=>setIsExtra(true)}
+    >
       <div className="flex flex-col justify-end">
-        <div className="h-64 flex items-center">
+        <div className="h-64 flex items-center overflow-hidden">
           <img src={imageUrl} alt="#" />
         </div>
-        <div className="text-2xl text-center hover:text-custom-green leading-none p-4">{name}</div>
-        <div className="text-base text-center text-custom-green font-bold">{price}грн</div>
+        <div className="text-2xl text-center hover:text-custom-green leading-none p-4 h-20 flex items-center justify-center">{name}</div>
+        <div className="text-base text-center text-custom-green font-bold">{price} UAH</div>
       </div>
       {extraHide ? (
-        isExtra ? (
+        isExtra &&
           <Extra buyHandler={buyHandler} item={item} activeClass={true} />
-        ) : (
-          ''
-        )
       ) : (
         <Extra buyHandler={buyHandler} item={item} activeClass={false} />
       )}

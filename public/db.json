@@ -3,7 +3,7 @@
     {
       "id": 0,
       "imageUrl": "https://design110.horoshop.ua/images/18/perets-bolgarskiy-chervoniy-80043326931681_small4.jpg",
-      "name": "Перец",
+      "name": "Pepper",
       "price": 803,
       "category": 1,
       "rating": 100
@@ -11,7 +11,7 @@
     {
       "id": 1,
       "imageUrl": "https://design110.horoshop.ua/images/25/24383031204283_small4.jpeg",
-      "name": "Капуста",
+      "name": "Cabbage",
       "price": 245,
       "category": 1,
       "rating": 200
@@ -19,7 +19,7 @@
     {
       "id": 2,
       "imageUrl": "https://design110.horoshop.ua/images/22/grechnevyy-khleb-21920826739274_small4.jpg",
-      "name": "Гречневый хлеб",
+      "name": "Buckwheat bread",
       "price": 295,
       "category": 3,
       "rating": 300
@@ -27,7 +27,7 @@
     {
       "id": 3,
       "imageUrl": "https://design110.horoshop.ua/images/19/bitok-govyazhiy-46326817520928_small4.jpg",
-      "name": "Мясо",
+      "name": "Meat",
       "price": 275,
       "category": 2,
       "rating": 400
@@ -35,7 +35,7 @@
     {
       "id": 4,
       "imageUrl": "https://design110.horoshop.ua/images/24/70891857488203_small4.jpeg",
-      "name": "Авокадо",
+      "name": "Avokado",
       "price": 415,
       "category": 1,
       "rating": 500
@@ -43,7 +43,7 @@
     {
       "id": 5,
       "imageUrl": "https://design110.horoshop.ua/images/31/56221315863233_small4.jpeg",
-      "name": "Печенье",
+      "name": "Cookies",
       "price": 580,
       "category": 3,
       "rating": 600
@@ -51,15 +51,15 @@
     {
       "id": 6,
       "imageUrl": "https://design110.horoshop.ua/images/28/44409973228149_small4.jpeg",
-      "name": "Лосось",
+      "name": "Salmon",
       "price": 675,
       "category": 2,
       "rating": 700
     },
     {
       "id": 7,
-      "imageUrl": "https://kakvarim.ru/wp-content/uploads/2018/05/kak-varit-skumbriyu-post-0-800x500.jpg",
-      "name": "Скумбрия",
+      "imageUrl": "https://ribnoe-remeslo.com.ua/wp-content/uploads/2019/07/skumbriya-ss.png",
+      "name": "Mackerel",
       "price": 800,
       "category": 2,
       "rating": 800
@@ -67,7 +67,7 @@
     {
       "id": 8,
       "imageUrl": "https://design110.horoshop.ua/images/18/perets-bolgarskiy-chervoniy-80043326931681_small4.jpg",
-      "name": "Перец(х2)",
+      "name": "Pepper(x2)",
       "price": 1606,
       "category": 1,
       "rating": 3
@@ -75,7 +75,7 @@
     {
       "id": 9,
       "imageUrl": "https://design110.horoshop.ua/images/25/24383031204283_small4.jpeg",
-      "name": "Капуста(х2)",
+      "name": "Cabbage(x2)",
       "price": 490,
       "category": 1,
       "rating": 8
@@ -83,7 +83,7 @@
     {
       "id": 10,
       "imageUrl": "https://design110.horoshop.ua/images/22/grechnevyy-khleb-21920826739274_small4.jpg",
-      "name": "Гречневый хлеб(х2)",
+      "name": "Buckwheat bread(x2)",
       "price": 539,
       "category": 3,
       "rating": 18
@@ -91,7 +91,7 @@
     {
       "id": 11,
       "imageUrl": "https://design110.horoshop.ua/images/19/bitok-govyazhiy-46326817520928_small4.jpg",
-      "name": "Мясо(х2)",
+      "name": "Meat(x2)",
       "price": 487,
       "category": 2,
       "rating": 7
@@ -99,7 +99,7 @@
     {
       "id": 12,
       "imageUrl": "https://design110.horoshop.ua/images/24/70891857488203_small4.jpeg",
-      "name": "Авокадо(х2)",
+      "name": "Avokado(x2)",
       "price": 888,
       "category": 1,
       "rating": 12
@@ -107,7 +107,7 @@
     {
       "id": 13,
       "imageUrl": "https://design110.horoshop.ua/images/31/56221315863233_small4.jpeg",
-      "name": "Печенье(х2)",
+      "name": "Cookies(x2)",
       "price": 999,
       "category": 3,
       "rating": 11
@@ -115,7 +115,7 @@
     {
       "id": 14,
       "imageUrl": "https://design110.horoshop.ua/images/28/44409973228149_small4.jpeg",
-      "name": "Лосось(х2)",
+      "name": "Salmon(x2)",
       "price": 1200,
       "category": 2,
       "rating": 14
@@ -123,7 +123,7 @@
     {
       "id": 15,
       "imageUrl": "https://kakvarim.ru/wp-content/uploads/2018/05/kak-varit-skumbriyu-post-0-800x500.jpg",
-      "name": "Скумбрия(х2)",
+      "name": "Mackerel(x2)",
       "price": 1500,
       "category": 2,
       "rating": 3
@@ -131,7 +131,7 @@
     {
       "id": 16,
       "imageUrl": "https://design110.horoshop.ua/images/18/perets-bolgarskiy-chervoniy-80043326931681_small4.jpg",
-      "name": "Перец(х3)",
+      "name": "Pepper(x3)",
       "price": 2000,
       "category": 1,
       "rating": 32
@@ -139,7 +139,7 @@
     {
       "id": 17,
       "imageUrl": "https://design110.horoshop.ua/images/25/24383031204283_small4.jpeg",
-      "name": "Капуста(х3)",
+      "name": "Cabbage(x3)",
       "price": 700,
       "category": 1,
       "rating": 24
@@ -147,7 +147,7 @@
     {
       "id": 18,
       "imageUrl": "https://design110.horoshop.ua/images/22/grechnevyy-khleb-21920826739274_small4.jpg",
-      "name": "Гречневый хлеб(х3)",
+      "name": "Buckwheat bread(x3)",
       "price": 800,
       "category": 3,
       "rating": 13
@@ -155,7 +155,7 @@
     {
       "id": 19,
       "imageUrl": "https://design110.horoshop.ua/images/19/bitok-govyazhiy-46326817520928_small4.jpg",
-      "name": "Мясо(х3)",
+      "name": "Meat(x3)",
       "price": 847,
       "category": 2,
       "rating": 2
@@ -163,7 +163,7 @@
     {
       "id": 20,
       "imageUrl": "https://design110.horoshop.ua/images/24/70891857488203_small4.jpeg",
-      "name": "Авокадо(х3)",
+      "name": "Avocado(x3)",
       "price": 1200,
       "category": 1,
       "rating": 28
@@ -171,7 +171,7 @@
     {
       "id": 21,
       "imageUrl": "https://design110.horoshop.ua/images/31/56221315863233_small4.jpeg",
-      "name": "Печенье(х3)",
+      "name": "Cookies(x3)",
       "price": 1500,
       "category": 3,
       "rating": 5
@@ -179,15 +179,15 @@
     {
       "id": 22,
       "imageUrl": "https://design110.horoshop.ua/images/28/44409973228149_small4.jpeg",
-      "name": "Лосось(х3)",
+      "name": "Salmon(x3)",
       "price": 1800,
       "category": 2,
       "rating": 20
     },
     {
       "id": 23,
-      "imageUrl": "https://kakvarim.ru/wp-content/uploads/2018/05/kak-varit-skumbriyu-post-0-800x500.jpg",
-      "name": "Скумбрия(х3)",
+      "imageUrl": "https://ribnoe-remeslo.com.ua/wp-content/uploads/2019/07/skumbriya-ss.png",
+      "name": "Mackerel(x3)",
       "price": 2000,
       "category": 2,
       "rating": 13

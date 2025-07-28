@@ -44,14 +44,14 @@ export const Item = ({
         className="absolute top-0 right-0 text-red-500 mr-2 font-bold cursor-pointer hover:text-red-700">
         x
       </span>
-      <div className="flex w-3/5">
+      <div className="flex md:w-3/5">
         <img className="h-20 p-2" src={imageUrl} alt="#" />
         <div className="flex flex-col justify-center">
           <p>{name}</p>
-          <span>{price} грн</span>
+          <span>{price} UAH</span>
         </div>
       </div>
-      <div className="flex items-center justify-between w-2/5">
+      <div className="flex items-center justify-between gap-2 md:w-2/5">
         <div className="border rounded">
           <button onClick={decrementHandler} className="text-base py-2 px-4 focus:outline-none">
             -
@@ -61,7 +61,7 @@ export const Item = ({
             +
           </button>
         </div>
-        <span>{price * amount} грн</span>
+        <span>{price * amount} UAH</span>
       </div>
     </div>
   );

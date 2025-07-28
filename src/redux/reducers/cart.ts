@@ -1,17 +1,19 @@
+import { loadCartFromStorage } from "../../helpers/loadCartFromStorage"
 import {
   ADD_TO_CART,
   DECREMENT_AMOUNT,
   INCREMENT_AMOUNT,
   REMOVE_FROM_CART,
-} from '../actions/types';
+  CLEAR_CART,
+} from "../actions/types"
 
 const initialState = {
-  items: {},
-};
+  items: loadCartFromStorage(),
+}
 
 interface ActionInterface {
-  type: string;
-  payload: any;
+  type: string
+  payload: any
 }
 
 export const cart = (state: any = initialState, action: ActionInterface) => {
@@ -23,11 +25,14 @@ export const cart = (state: any = initialState, action: ActionInterface) => {
           ...state.items,
           ...action.payload,
         },
-      };
+      }
 
     case REMOVE_FROM_CART:
-      delete state.items[action.payload];
-      return state;
+      delete state.items[action.payload]
+      return state
+
+    case CLEAR_CART:
+      return { ...state, items: {} }
 
     case INCREMENT_AMOUNT:
       return {
@@ -38,7 +43,7 @@ export const cart = (state: any = initialState, action: ActionInterface) => {
             amount: state.items[action.payload].amount + 1,
           },
         },
-      };
+      }
 
     case DECREMENT_AMOUNT:
       return {
@@ -49,9 +54,9 @@ export const cart = (state: any = initialState, action: ActionInterface) => {
             amount: state.items[action.payload].amount - 1,
           },
         },
-      };
+      }
 
     default:
-      return state;
+      return state
   }
-};
+}

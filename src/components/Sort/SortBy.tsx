@@ -1,10 +1,10 @@
 import React from 'react';
 const sortTypes = [
-  { name: 'популярности', type: 'rating', order: 'desc' },
-  { name: 'цене ↑', type: 'price', order: 'asc' },
-  { name: 'цене ↓', type: 'price', order: 'desc' },
-  { name: 'алфавиту ↓', type: 'name', order: 'asc' },
-  { name: 'алфавиту ↑', type: 'name', order: 'desc' },
+  { name: 'popular', type: 'rating', order: 'desc' },
+  { name: 'price ↑', type: 'price', order: 'asc' },
+  { name: 'price ↓', type: 'price', order: 'desc' },
+  { name: 'name ↓', type: 'name', order: 'asc' },
+  { name: 'name ↑', type: 'name', order: 'desc' },
 ];
 
 export const SortBy = (props: {
@@ -47,10 +47,16 @@ export const SortBy = (props: {
   return (
     <div ref={sortRef} className="sort flex relative">
       <div className="sort__label flex items-center">
-        <b className="mx-2 border-b-2 border-dashed border-transparent">Сортировать по:</b>
+        <b 
+          className="mx-2 border-b-2 border-dashed border-transparent"
+          // since there is no white space in old tailwind version
+          style={{whiteSpace: 'nowrap'}}
+        >Sort by:</b>
         <span
           onClick={toggleVisiblePopup}
-          className="border-b-2 border-dashed border-custom-green font-bold text-custom-green cursor-pointer">
+          className="border-b-2 border-dashed border-custom-green font-bold text-custom-green cursor-pointer"
+          style={{whiteSpace: 'nowrap'}}
+        >
           {activeLabel}
         </span>
       </div>

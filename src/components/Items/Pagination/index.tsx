@@ -23,7 +23,7 @@ export const Pagination = ({
     <div className="flex items-center mt-10">
       <span
         className="px-3 py-1 border rounded cursor-pointer hover:border-custom-green"
-        onClick={handleSetPage.bind(null, 1)}>
+        onClick={()=>handleSetPage(1)}>
         {'<'}
       </span>
       {pageNumbers.map((page: number, index: number) => (
@@ -34,13 +34,13 @@ export const Pagination = ({
               ? paginationStyles + ' font-bold text-custom-green hover:no-underline'
               : paginationStyles
           }
-          onClick={handleSetPage.bind(null, page)}>
+          onClick={()=>handleSetPage(page)}>
           {page}
         </span>
       ))}
       <span
         className="px-3 py-1 border rounded cursor-pointer hover:border-custom-green"
-        onClick={handleSetPage.bind(null, pageNumbers.length)}>
+        onClick={()=>handleSetPage(pageNumbers.length)}>
         {'>'}
       </span>
     </div>

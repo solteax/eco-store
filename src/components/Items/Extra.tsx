@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useSelector } from 'react-redux';
-import { productItem, store } from '../../interfaces';
+import { productItem } from '../../interfaces';
 
 const ExtraInner = ({
   buyHandler,
@@ -25,10 +25,10 @@ const ExtraInner = ({
           ? 'border-custom-green absolute -bottom-70 -left-1 border border-4 border-t-0 z-50 box-content'
           : 'hover:border-custom-green'
       } w-full bg-white `}>
-      <div className={`${activeClass ? 'px-12' : ''} flex items-center justify-around py-4`}>
+      <div className={`${activeClass ? 'px-3 xl:px-12' : ''} flex items-center justify-around py-4`}>
         {isAdded && amount ? (
           <button className="bg-custom-green rounded px-4 py-2 text-base text-white opacity-50 focus:outline-none">
-            В корзине ({amount})
+            In cart ({amount})
           </button>
         ) : (
           <>
@@ -52,8 +52,9 @@ const ExtraInner = ({
                 buyHandler(item, totalAmount);
                 setIsAdded(true);
               }}
-              className="bg-custom-green rounded px-4 py-2 text-base text-white hover:bg-custom-green-hover focus:outline-none">
-              Добавить
+              className="bg-custom-green rounded px-4 py-2 text-base text-white hover:bg-custom-green-hover focus:outline-none"
+            >
+              {amount > 1 ? "Update" : "Add"}
             </button>
           </>
         )}

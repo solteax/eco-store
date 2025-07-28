@@ -15,13 +15,14 @@ export const SortCategory = ({
   categoryHandler: (index: number) => void;
 }) => {
   return (
-    <div className="categories">
+    <div className="categories overflow-x-auto pb-4 w-full mb-4">
       <ul className="flex">
         {categories.map((category: string, index: number) => (
           <li
             key={category + index}
             className={activeCategory === index ? activeCategoryClasses : categoryClasses}
-            onClick={categoryHandler.bind(null, index)}>
+            style={{whiteSpace: 'nowrap'}}
+            onClick={()=>categoryHandler(index)}>
             {category}
           </li>
         ))}
