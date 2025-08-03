@@ -25,7 +25,7 @@ const ExtraInner = ({
           ? 'border-custom-green absolute -bottom-70 -left-1 border border-4 border-t-0 z-50 box-content'
           : 'hover:border-custom-green'
       } w-full bg-white `}>
-      <div className={`${activeClass ? 'px-3 xl:px-12' : ''} flex items-center justify-around py-4`}>
+      <div className={`${activeClass ? 'px-3 xl:px-12' : ''} flex items-center justify-center gap-4 py-4`}>
         {isAdded && amount ? (
           <button className="bg-custom-green rounded px-4 py-2 text-base text-white opacity-50 focus:outline-none">
             In cart ({amount})
