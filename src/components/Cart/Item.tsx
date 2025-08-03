@@ -38,14 +38,14 @@ export const Item = ({
   React.useEffect(() => {}, [dispatch]);
 
   return (
-    <div className="flex justify-between border rounded mb-1 pr-8 py-2 cart-item relative">
+    <div className="flex justify-around md:justify-between border rounded mb-1 pr-2 md:pr-8 py-2 cart-item relative gap-2">
       <span
         onClick={deleteItemHandler}
         className="absolute top-0 right-0 text-red-500 mr-2 font-bold cursor-pointer hover:text-red-700">
         x
       </span>
       <div className="flex md:w-3/5">
-        <img className="h-20 p-2" src={imageUrl} alt="#" />
+        <img className="h-20 pr-2" src={imageUrl} alt="#" />
         <div className="flex flex-col justify-center">
           <p>{name}</p>
           <span>{price} UAH</span>
@@ -61,7 +61,7 @@ export const Item = ({
             +
           </button>
         </div>
-        <span>{price * amount} UAH</span>
+        <span style={{ width: 'min-content' }}>{price * amount} UAH</span>
       </div>
     </div>
   );
